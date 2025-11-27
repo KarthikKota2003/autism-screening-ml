@@ -1,0 +1,5 @@
+Dataset,Original Rows,Original Cols,Encoded Cols,Final Rows,Final Cols,Rows Added,Cols Added
+Adolescent,104,22,64,126,64,22,42
+Adult,704,22,145,1030,145,326,123
+Child,292,22,91,292,91,0,69
+Toddler,1054,19,31,1456,31,402,12

@@ -1,0 +1,17 @@
+[
+  {
+    "dataset": "toddler",
+    "scaler": "QuantileTransformer",
+    "model": "DecisionTree",
+    "tuning_method": "GridSearch",
+    "best_params": "{'criterion': 'entropy', 'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 10}",
+    "Accuracy": 0.9241706161137441,
+    "ROC-AUC": 0.9564805057955742,
+    "F1-Score": 0.9455782312925171,
+    "Precision": 0.9391891891891891,
+    "Recall": 0.952054794520548,
+    "MCC": 0.8208037157656087,
+    "Kappa": 0.8205973004570093,
+    "Log Loss": 0.6538622506035265
+  }
+]

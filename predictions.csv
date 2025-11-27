@@ -1,0 +1,4 @@
+A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,age_months,gender,ethnicity,jaundice,family_asd,relation,contry_of_res,Predicted_Class,ASD_Probability,Prediction
+1,1,1,1,1,1,1,1,1,1,36,m,white european,no,no,parent,United Kingdom,1,1.0,YES
+0,0,0,0,0,0,0,0,0,0,24,f,asian,yes,no,parent,India,0,0.0,NO
+1,0,1,0,1,0,1,0,1,0,30,m,middle eastern,no,yes,health care professional,UAE,1,1.0,YES

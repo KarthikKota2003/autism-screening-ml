@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="result-container">
+    <div class="result-card {{ 'high-risk' if result.prediction == 'YES' else 'low-risk' }}">
+        <div class="result-header">
+            <div class="result-icon">
+                {% if result.prediction == 'YES' %}
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                {% else %}
+                <i class="fa-solid fa-check-circle"></i>
+                {% endif %}
+            </div>
+            <h2>Screening Result</h2>
+        </div>
+
+        <div class="result-body">
+            <div class="score-display">
+                <p class="prediction-label">Risk Assessment:</p>
+                <h3 class="prediction-value">{{ 'High Risk' if result.prediction == 'YES' else 'Low Risk' }}</h3>
+
+                <div class="probability-bar-container">
+                    <div class="probability-bar" style="width: {{ result.probability }}%"></div>
+                </div>
+                <p class="probability-text">Model Confidence: <strong>{{ result.probability }}%</strong></p>
+            </div>
+
+            <div class="recommendations">
+                <h3><i class="fa-solid fa-user-doctor"></i> Recommendations</h3>
+
+                {% if result.prediction == 'YES' %}
+                <ul class="rec-list">
+                    <li><strong>Consult a Specialist:</strong> We strongly recommend scheduling an appointment with a
+                        developmental pediatrician, psychologist, or psychiatrist for a comprehensive evaluation.</li>
+                    <li><strong>Early Intervention:</strong> Early diagnosis and intervention can significantly improve
+                        outcomes. Do not delay seeking professional advice.</li>
+                    <li><strong>Prepare for the Visit:</strong> Document specific behaviors or concerns you've observed
+                        to share with the doctor.</li>
+                </ul>
+                {% else %}
+                <ul class="rec-list">
+                    <li><strong>Monitor Development:</strong> Continue to monitor developmental milestones appropriate
+                        for the age group.</li>
+                    <li><strong>Regular Check-ups:</strong> Maintain regular visits with your primary healthcare
+                        provider.</li>
+                    <li><strong>Re-screen if needed:</strong> If you notice new concerning behaviors in the future, feel
+                        free to use this screening tool again.</li>
+                </ul>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="result-actions">
+            <a href="{{ url_for('index') }}" class="btn-primary">Back to Home</a>
+            <a href="https://www.autismspeaks.org" target="_blank" class="btn-secondary">Learn More</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

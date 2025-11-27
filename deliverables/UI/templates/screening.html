@@ -1,0 +1,274 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container">
+    <div class="form-header {{ category }}">
+        <h2><i class="fa-solid fa-clipboard-list"></i> {{ category|capitalize }} Screening</h2>
+        <p>Please answer all questions truthfully for accurate results.</p>
+    </div>
+
+    <form action="{{ url_for('predict') }}" method="POST" class="screening-form" id="screeningForm">
+        <input type="hidden" name="category" value="{{ category }}">
+
+        <!-- Section 1: Screening Questions -->
+        <div class="form-section">
+            <h3><i class="fa-solid fa-question-circle"></i> Behavioral Questions (Q-CHAT-10)</h3>
+            <p class="section-desc">Answer YES or NO based on observed behavior.</p>
+
+            <div class="question-item">
+                <label class="question-label">A1: Does the individual look at you when you call his/her name?</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="A1_Score" value="1" required>
+                        <span>Yes</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="A1_Score" value="0" required>
+                        <span>No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-item">
+                <label class="question-label">A2: How easy is it for you to get eye contact with the individual?</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="A2_Score" value="1" required>
+                        <span>Easy</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="A2_Score" value="0" required>
+                        <span>Difficult</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-item">
+                <label class="question-label">A3: Does the individual point to indicate that s/he wants something?
+                    (e.g., a toy that is out of reach)</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="A3_Score" value="1" required>
+                        <span>Yes</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="A3_Score" value="0" required>
+                        <span>No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-item">
+                <label class="question-label">A4: Does the individual point to share interest with you? (e.g., pointing
+                    at an interesting sight)</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="A4_Score" value="1" required>
+                        <span>Yes</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="A4_Score" value="0" required>
+                        <span>No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-item">
+                <label class="question-label">A5: Does the individual pretend? (e.g., care for dolls, talk on a toy
+                    phone)</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="A5_Score" value="1" required>
+                        <span>Yes</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="A5_Score" value="0" required>
+                        <span>No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-item">
+                <label class="question-label">A6: Does the individual follow where you're looking?</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="A6_Score" value="1" required>
+                        <span>Yes</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="A6_Score" value="0" required>
+                        <span>No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-item">
+                <label class="question-label">A7: If you or someone else in the family is visibly upset, does the
+                    individual show signs of wanting to comfort them? (e.g., stroking hair, hugging them)</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="A7_Score" value="1" required>
+                        <span>Yes</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="A7_Score" value="0" required>
+                        <span>No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-item">
+                <label class="question-label">A8: Would you describe the individual's first words as typical or
+                    unusual?</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="A8_Score" value="1" required>
+                        <span>Typical</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="A8_Score" value="0" required>
+                        <span>Unusual/No Speech</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-item">
+                <label class="question-label">A9: Does the individual use simple gestures? (e.g., wave goodbye)</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="A9_Score" value="1" required>
+                        <span>Yes</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="A9_Score" value="0" required>
+                        <span>No</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="question-item">
+                <label class="question-label">A10: Does the individual stare at nothing with no apparent
+                    purpose?</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" name="A10_Score" value="1" required>
+                        <span>Yes</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" name="A10_Score" value="0" required>
+                        <span>No</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Demographics -->
+        <div class="form-section">
+            <h3><i class="fa-solid fa-user-tag"></i> Demographics</h3>
+
+            <div class="grid-2">
+                <div class="form-group">
+                    <label for="age">Age {% if category == 'toddler' %}(Months){% else %}(Years){% endif %}</label>
+                    <input type="number" id="age" name="age"
+                        value="{% if unit == 'months' and category == 'toddler' %}{{ age }}{% elif unit == 'years' and category != 'toddler' %}{{ age }}{% endif %}"
+                        required min="0" step="0.1">
+                </div>
+
+                <div class="form-group">
+                    <label for="gender">Gender</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="m">Male</option>
+                        <option value="f">Female</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="ethnicity">Ethnicity</label>
+                    <select id="ethnicity" name="ethnicity" required>
+                        <option value="" disabled selected>Select Ethnicity</option>
+                        <option value="white european">White European</option>
+                        <option value="latino">Latino</option>
+                        <option value="asian">Asian</option>
+                        <option value="middle eastern">Middle Eastern</option>
+                        <option value="black">Black</option>
+                        <option value="south asian">South Asian</option>
+                        <option value="native indian">Native Indian</option>
+                        <option value="others">Others</option>
+                        <option value="pacifica">Pacifica</option>
+                        <option value="hispanic">Hispanic</option>
+                        <option value="turkish">Turkish</option>
+                        <option value="mixed">Mixed</option>
+                    </select>
+                </div>
+
+                {% if category != 'toddler' %}
+                <div class="form-group">
+                    <label for="contry_of_res">Country of Residence</label>
+                    <select id="contry_of_res" name="contry_of_res" required>
+                        <option value="" disabled selected>Select Country</option>
+                        <option value="United States">United States</option>
+                        <option value="United Kingdom">United Kingdom</option>
+                        <option value="India">India</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="Australia">Australia</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                {% endif %}
+
+                <div class="form-group">
+                    <label for="jaundice">Born with Jaundice?</label>
+                    <select id="jaundice" name="jaundice" required>
+                        <option value="" disabled selected>Select Option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="family_asd">Family History of ASD?</label>
+                    <select id="family_asd" name="family_asd" required>
+                        <option value="" disabled selected>Select Option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                {% if category != 'toddler' %}
+                <div class="form-group">
+                    <label for="used_app_before">Used Screening App Before?</label>
+                    <select id="used_app_before" name="used_app_before" required>
+                        <option value="" disabled selected>Select Option</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+                {% endif %}
+
+                {% if category in ['adolescent', 'adult', 'toddler'] %}
+                <div class="form-group">
+                    <label for="relation">Who is completing the test?</label>
+                    <select id="relation" name="relation" required>
+                        <option value="" disabled selected>Select Relation</option>
+                        <option value="Self">Self</option>
+                        <option value="Parent">Parent</option>
+                        <option value="Relative">Relative</option>
+                        <option value="Health care professional">Health Care Professional</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="form-actions">
+            <a href="{{ url_for('index') }}" class="btn-secondary">Cancel</a>
+            <button type="submit" class="btn-primary">Analyze Results</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

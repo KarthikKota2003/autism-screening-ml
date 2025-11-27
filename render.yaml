@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: autism-screening-app
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r deliverables/UI/requirements.txt
+    startCommand: gunicorn app:app --chdir deliverables/UI
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: FLASK_ENV
+        value: production
+      - key: PYTHON_VERSION
+        value: 3.12.0

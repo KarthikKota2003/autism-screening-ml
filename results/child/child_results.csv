@@ -1,0 +1,33 @@
+dataset,scaler,model,tuning_method,best_params,Accuracy,ROC-AUC,F1-Score,Precision,Recall,MCC,Kappa,Log Loss
+child,QuantileTransformer,DecisionTree,GridSearch,"{'criterion': 'gini', 'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.220446049250313e-16
+child,QuantileTransformer,KNN,GridSearch,"{'metric': 'euclidean', 'n_neighbors': 11, 'weights': 'distance'}",0.8983050847457628,0.9861751152073733,0.9,0.84375,0.9642857142857143,0.8048520309274254,0.7974828375286042,0.27373192628457
+child,QuantileTransformer,LDA,GridSearch,{'solver': 'svd'},0.9322033898305084,0.9988479262672811,0.9333333333333333,0.875,1.0,0.8729815428710669,0.8649885583524027,0.11878190264136404
+child,QuantileTransformer,GaussianNB,GridSearch,{'var_smoothing': 1e-09},0.8135593220338984,0.9907834101382488,0.835820895522388,0.717948717948718,1.0,0.6805826336729709,0.6331260599208592,1.0964923832276496
+child,QuantileTransformer,LogisticRegression,BayesianOptimization,"OrderedDict({'C': 3.2521088005944945, 'penalty': 'l2', 'solver': 'liblinear'})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.006948019172693461
+child,QuantileTransformer,AdaBoost,BayesianOptimization,"OrderedDict({'learning_rate': 0.08783376731568662, 'n_estimators': 232})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.12692801104297263
+child,QuantileTransformer,RandomForest,BayesianOptimization,"OrderedDict({'max_depth': 15, 'min_samples_leaf': 8, 'min_samples_split': 19, 'n_estimators': 226})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.21502114558480956
+child,QuantileTransformer,SVM,BayesianOptimization,"OrderedDict({'C': 60.8033576120264, 'gamma': 0.00031077441290512566, 'kernel': 'sigmoid'})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.025459684969251783
+child,PowerTransformer,DecisionTree,GridSearch,"{'criterion': 'gini', 'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.220446049250313e-16
+child,PowerTransformer,KNN,GridSearch,"{'metric': 'manhattan', 'n_neighbors': 11, 'weights': 'distance'}",0.9152542372881356,0.9942396313364056,0.9152542372881356,0.8709677419354839,0.9642857142857143,0.8352534562211982,0.830945558739255,0.23775568755671309
+child,PowerTransformer,LDA,GridSearch,{'solver': 'svd'},0.9830508474576272,1.0,0.9818181818181818,1.0,0.9642857142857143,0.9665152796072526,0.9659549913444894,0.06676792823583624
+child,PowerTransformer,GaussianNB,GridSearch,{'var_smoothing': 1e-09},0.847457627118644,0.9953917050691244,0.8615384615384616,0.7567567567567568,1.0,0.7328391243748335,0.6988088485536018,1.1356798442040055
+child,PowerTransformer,LogisticRegression,BayesianOptimization,"OrderedDict({'C': 2.7364528220782454, 'penalty': 'l1', 'solver': 'saga'})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.018155506950065962
+child,PowerTransformer,AdaBoost,BayesianOptimization,"OrderedDict({'learning_rate': 0.08783376731568662, 'n_estimators': 232})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.12692801104297263
+child,PowerTransformer,RandomForest,BayesianOptimization,"OrderedDict({'max_depth': 15, 'min_samples_leaf': 8, 'min_samples_split': 19, 'n_estimators': 226})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.21733912855918142
+child,PowerTransformer,SVM,BayesianOptimization,"OrderedDict({'C': 79.40066316230305, 'gamma': 0.0031958346224416146, 'kernel': 'sigmoid'})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.02189274942680925
+child,Normalizer,DecisionTree,GridSearch,"{'criterion': 'entropy', 'max_depth': 5, 'min_samples_leaf': 4, 'min_samples_split': 2}",0.9491525423728814,0.9827188940092166,0.9454545454545454,0.9629629629629629,0.9285714285714286,0.8983857676636111,0.897864974033468,0.6441578287311969
+child,Normalizer,KNN,GridSearch,"{'metric': 'manhattan', 'n_neighbors': 11, 'weights': 'distance'}",0.9322033898305084,0.9942396313364056,0.9333333333333333,0.875,1.0,0.8729815428710669,0.8649885583524027,0.1934183972751119
+child,Normalizer,LDA,GridSearch,{'solver': 'svd'},0.9152542372881356,0.9907834101382489,0.9180327868852459,0.8484848484848485,1.0,0.84358310412664,0.8315248429468874,0.17389380799474835
+child,Normalizer,GaussianNB,GridSearch,{'var_smoothing': 1e-09},0.8305084745762712,0.9815668202764977,0.8484848484848485,0.7368421052631579,1.0,0.7065062657651134,0.6659116647791619,1.2667540485771775
+child,Normalizer,LogisticRegression,BayesianOptimization,"OrderedDict({'C': 10.0, 'penalty': 'l1', 'solver': 'liblinear'})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.09441826959924808
+child,Normalizer,AdaBoost,BayesianOptimization,"OrderedDict({'learning_rate': 0.8449980838885723, 'n_estimators': 271})",0.9830508474576272,1.0,0.9824561403508771,0.9655172413793104,1.0,0.9666289484158136,0.9660724554341575,0.4169147834300054
+child,Normalizer,RandomForest,BayesianOptimization,"OrderedDict({'max_depth': 30, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 500})",0.9661016949152542,1.0,0.9655172413793104,0.9333333333333333,1.0,0.9344079834686198,0.9322617680826636,0.11263422927602976
+child,Normalizer,SVM,BayesianOptimization,"OrderedDict({'C': 100.0, 'gamma': 0.1, 'kernel': 'rbf'})",0.9661016949152542,0.9965437788018433,0.9642857142857143,0.9642857142857143,0.9642857142857143,0.9320276497695853,0.9320276497695853,0.09191911299268546
+child,MaxAbsScaler,DecisionTree,GridSearch,"{'criterion': 'gini', 'max_depth': 3, 'min_samples_leaf': 1, 'min_samples_split': 2}",1.0,1.0,1.0,1.0,1.0,1.0,1.0,2.220446049250313e-16
+child,MaxAbsScaler,KNN,GridSearch,"{'metric': 'manhattan', 'n_neighbors': 11, 'weights': 'distance'}",0.8983050847457628,0.9919354838709677,0.9032258064516129,0.8235294117647058,1.0,0.8149457788042661,0.798175598631699,0.23574771088532573
+child,MaxAbsScaler,LDA,GridSearch,{'solver': 'svd'},0.9322033898305084,0.9976958525345623,0.9333333333333333,0.875,1.0,0.8729815428710669,0.8649885583524027,0.11641779864671184
+child,MaxAbsScaler,GaussianNB,GridSearch,{'var_smoothing': 1e-07},0.8813559322033898,0.9942396313364055,0.8888888888888888,0.8,1.0,0.7869910029407435,0.7649402390438247,0.5799022677762367
+child,MaxAbsScaler,LogisticRegression,BayesianOptimization,"OrderedDict({'C': 2.7364528220782454, 'penalty': 'l1', 'solver': 'saga'})",0.9830508474576272,1.0,0.9824561403508771,0.9655172413793104,1.0,0.9666289484158136,0.9660724554341575,0.042943052886512574
+child,MaxAbsScaler,AdaBoost,BayesianOptimization,"OrderedDict({'learning_rate': 0.08783376731568662, 'n_estimators': 232})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.12692801104297263
+child,MaxAbsScaler,RandomForest,BayesianOptimization,"OrderedDict({'max_depth': 15, 'min_samples_leaf': 8, 'min_samples_split': 19, 'n_estimators': 226})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.21231622440886583
+child,MaxAbsScaler,SVM,BayesianOptimization,"OrderedDict({'C': 100.0, 'gamma': 0.01125166779720845, 'kernel': 'rbf'})",1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.020512249486207945

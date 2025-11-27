@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <h1>Early Detection, Better Future</h1>
+    <p>Advanced AI-powered autism screening for all ages. Select a category to begin.</p>
+</div>
+
+<div class="islands-grid">
+    <a href="{{ url_for('screening', category='toddler') }}" class="island-card toddler">
+        <div class="island-icon"><i class="fa-solid fa-baby"></i></div>
+        <h2>Toddler</h2>
+        <p>12 - 36 Months</p>
+        <span class="btn-text">Start Screening <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a href="{{ url_for('screening', category='child') }}" class="island-card child">
+        <div class="island-icon"><i class="fa-solid fa-child"></i></div>
+        <h2>Child</h2>
+        <p>4 - 11 Years</p>
+        <span class="btn-text">Start Screening <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a href="{{ url_for('screening', category='adolescent') }}" class="island-card adolescent">
+        <div class="island-icon"><i class="fa-solid fa-user-graduate"></i></div>
+        <h2>Adolescent</h2>
+        <p>12 - 16 Years</p>
+        <span class="btn-text">Start Screening <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+
+    <a href="{{ url_for('screening', category='adult') }}" class="island-card adult">
+        <div class="island-icon"><i class="fa-solid fa-user"></i></div>
+        <h2>Adult</h2>
+        <p>18+ Years</p>
+        <span class="btn-text">Start Screening <i class="fa-solid fa-arrow-right"></i></span>
+    </a>
+</div>
+
+<!-- Age Classifier FAB -->
+<button id="age-classifier-btn" class="fab" title="Help me choose">
+    <i class="fa-solid fa-clipboard-question"></i>
+</button>
+
+<!-- Age Classifier Modal -->
+<div id="age-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2><i class="fa-solid fa-robot"></i> Age Classifier</h2>
+        <p>Enter the age to find the right screening category.</p>
+
+        <div class="input-group">
+            <input type="number" id="age-input" placeholder="Enter age" min="0" step="0.1">
+            <select id="age-unit">
+                <option value="years">Years</option>
+                <option value="months">Months</option>
+            </select>
+        </div>
+
+        <button id="classify-btn" class="btn-primary">Find Category</button>
+
+        <div id="classifier-result" class="result-box hidden">
+            <p id="classifier-message"></p>
+            <a id="classifier-link" href="#" class="btn-secondary">Proceed to Screening</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

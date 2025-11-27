@@ -1,0 +1,2 @@
+dataset,scaler,model,tuning_method,best_params,Accuracy,ROC-AUC,F1-Score,Precision,Recall,MCC,Kappa,Log Loss
+toddler,QuantileTransformer,DecisionTree,GridSearch,"{'criterion': 'entropy', 'max_depth': 5, 'min_samples_leaf': 1, 'min_samples_split': 10}",0.9241706161137441,0.9564805057955742,0.9455782312925171,0.9391891891891891,0.952054794520548,0.8208037157656087,0.8205973004570093,0.6538622506035265
